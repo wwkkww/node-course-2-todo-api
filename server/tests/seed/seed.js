@@ -31,13 +31,13 @@ const todos = [{
   completedAt: 333
 }];
 
-const populateTodos = (done) => {
+const populateTodos = function(done) {
   Todo.remove({}).then(() => {
     return Todo.insertMany(todos);
   }).then(() => done());
 };
 
-const populateUsers = (done) => {
+const populateUsers = function(done) {
   User.remove({}).then(()=> {
     var userOne = new User(users[0]).save();
     var userTwo = new User(users[1]).save();
